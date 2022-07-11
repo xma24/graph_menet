@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+configs/.DS_Store
+work_dirs/.DS_Store
+work_dirs/MENET/.DS_Store
+work_dirs/MENET/main_csv_logs/.DS_Store
+work_dirs/MENET/main_csv_logs/lightning_logs/.DS_Store
+work_dirs/MENET/main_csv_logs/lightning_logs/version_0/.DS_Store
