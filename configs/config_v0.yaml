@@ -1,0 +1,62 @@
+DATASET:
+  DATA_ROOT: "./data/"
+  WORKERS: 8
+  PIN_MEMORY: True
+  CLS_NAMES: "NONE"
+  LOGDIR: "./work_dirs/MENET/main_csv_logs/"
+  WORK_DIRS: "./work_dirs/"
+  NUM_CLASSES: 2
+  DATASET_NAME: "ADNI"
+  DATALOADER_NAME: "dataloader_v0"
+  # CLASSES: ["AAAA"]
+  CLASSES: "None"
+  NUM_SCALES: 5
+  NUM_ROI: 148
+  SCALE_REG: 0.0001
+  NUM_FOLD: 3
+
+SETTING:
+  RANDOM_SEED: 42
+
+EXTRA_ARGS:
+  ARGS: "None"
+
+NET:
+  MODEL: "model_v0"
+  LR: 0.0001
+  SCALE_LR: 0.001
+  OPT: "SGD"
+  WEIGHT_DECAY: 0.0005
+  BETA1: 0.5
+  MOMENTUM: 0.9
+  EPS: 0.00000001 # 1e-8
+  AMSGRAD: False
+  SCALE_REG: 0.001
+  L1: 0.0001
+  DO: 0.3
+
+TRAIN:
+  BATCH_SIZE: 4
+  NUM_GPUS: 1 #"autocount"
+  LOGGER: "csv" # "neptune"
+  NUM_NODES: 1
+  PRECISION: 32
+  ACCELERATOR: "ddp"
+  # STRATEGY:
+  PROGRESS_BAR_REFRESH_RATE: 1
+  MAX_EPOCHS: 200
+  PRETRAIN: False
+  POLY_LR: True
+  CKPT_PATH: "None"
+  RESUME: "None"
+  CPUS: False
+
+VAL:
+  BATCHES: 1
+  VAL_INTERVAL: 1
+
+TEST:
+  CKPT_PATH: "None"
+  MULTISCALE: True
+  IMAGERATIOS: [1.0]
+  SLIDINGSCALE: False
